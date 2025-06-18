@@ -22,6 +22,7 @@ const NutritionAnalyzer = () => {
 
         try {
             // Call our backend API to analyze the food
+            // Using relative URL so it works in both development and production
             const response = await fetch(`/api/analyze/${encodeURIComponent(foodItem.trim())}`);
 
             // Check if the request was successful
@@ -89,7 +90,8 @@ const NutritionAnalyzer = () => {
 
         try {
             // Call our backend API to analyze the selected food
-            const response = await fetch(`http://localhost:8000/api/analyze/${encodeURIComponent(food.trim())}`);
+            // FIXED: Using relative URL instead of hardcoded localhost
+            const response = await fetch(`/api/analyze/${encodeURIComponent(food.trim())}`);
 
             if (!response.ok) {
                 throw new Error(`Failed to analyze ${food}. Please try again.`);
