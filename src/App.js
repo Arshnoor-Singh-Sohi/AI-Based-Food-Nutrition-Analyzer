@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Search, Sparkles, Heart, Zap, Shield, ChefHat, BarChart3, Utensils, Loader2, AlertCircle } from 'lucide-react';
 
 const NutritionAnalyzer = () => {
