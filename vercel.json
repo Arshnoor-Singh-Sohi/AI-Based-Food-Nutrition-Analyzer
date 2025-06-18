@@ -7,20 +7,12 @@
     },
     {
       "src": "package.json",
-      "use": "@vercel/node"
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
-  "env": {
-    "OPENAI_API_KEY": "@openai_api_key"
-  }
+    { "src": "/api/(.*)", "dest": "/api/index.py" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
