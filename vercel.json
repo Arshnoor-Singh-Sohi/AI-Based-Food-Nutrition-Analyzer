@@ -18,11 +18,15 @@
     },
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      }
     },
     {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
-      "dest": "/$1"
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg))",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      }
     },
     {
       "src": "/(.*)",
